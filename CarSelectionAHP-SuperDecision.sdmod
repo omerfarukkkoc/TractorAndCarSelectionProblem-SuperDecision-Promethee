@@ -1,0 +1,230 @@
+set top_net [getTopNet $net]
+set SAVED_WITH_VERSION {2.8.0 made on Fri, 20 May 2016 12:23:48 -0400.  VCRevInfo 2902.  Installed on MacOSX}
+setDefaultCompareMode $net switch_to_question
+set x 180
+set y 333
+set desc {description}
+set name {Alternatives}
+set color #caf2fe
+set iconUU {}
+set iconFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set winFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set width 647
+set height 51
+set clusterName {Alternatives}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {A}
+set desc {description}
+set x 176
+set y 30
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {B}
+set desc {description}
+set x 311
+set y 33
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {C}
+set desc {description}
+set x 490
+set y 30
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set x 174
+set y 180
+set desc {description}
+set name {Criteria}
+set color #fdbec6
+set iconUU {}
+set iconFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set winFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set width 643
+set height 60
+set clusterName {Criteria}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {Appearance}
+set desc {description}
+set x 197
+set y 57
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {Cost}
+set desc {description}
+set x 97
+set y 59
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {Fuel Consumption}
+set desc {description}
+set x 475
+set y 63
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set name {Horse Power}
+set desc {description}
+set x 333
+set y 59
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set x 240
+set y 37
+set desc {description}
+set name {Goal}
+set color #ffffa7
+set iconUU {}
+set iconFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set winFont "-*-times-medium-r-normal-*-12-*-*-*-*-*"
+set width 513
+set height 18
+set clusterName {Goal}
+set clusterCompareWord {}
+makeCluster $net $x $y $name $desc
+clusterChangeColor $net $name $color
+setClusterIconUU $net $name $iconUU
+setClusterIconFont $net $name $iconFont
+setClusterTitleFont $net $name $winFont
+setClusterWinSize $net $name $width $height
+setClusterCompareWord $net $name $clusterCompareWord
+deIconizeCluster $net $name
+set name {Choosing the Best Car}
+set desc {description}
+set x 206
+set y 28
+set color {white}
+set iconUU {}
+set font {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+makeNode $net $clusterName $name $desc $x $y
+setNodeIconUU $net $name $iconUU
+setNodeColor $net $name $color
+setNodeFont $net $name $font
+set init {Criteria}
+set final {Alternatives}
+connectClusters $net $init $final
+set init {Goal}
+set final {Criteria}
+connectClusters $net $init $final
+setNodeCompareWord  $net {Appearance} {Alternatives} {important}
+setNodeCompareWord  $net {Choosing the Best Car} {Criteria} {important}
+setNodeCompareWord  $net {Cost} {Alternatives} {important}
+setNodeCompareWord  $net {Fuel Consumption} {Alternatives} {important}
+setNodeCompareWord  $net {Horse Power} {Alternatives} {important}
+setNetCompareWord $net {important}
+setNetClusterColor $net {#caf2fe}
+setNetNodeColor $net {white}
+setNetClusterWinFont $net {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+setNetClusterIconFont $net {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+setNetNodeFont $net {-*-times-medium-r-normal-*-12-*-*-*-*-*}
+setFormulaType $net 0
+#Working on net 0
+catch {limitPowerOptions $net 2 0}
+c-network readAllCompares -network $net -source {
+3
+Alternatives
+3
+A
+B
+C
+Criteria
+4
+Appearance
+Cost
+Fuel Consumption
+Horse Power
+Goal
+1
+Choosing the Best Car
+
+3 0,0 1,1 2,2 
+ 0.000000  1.000000  0.000000 
+ 0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.000000 
+0
+0 
+
+1
+1 0,0 
+
+2
+1 1,0 
+
+1,0,0
+3 0,0 1,1 2,2 
+ 3.000000  1.000000 
+ 0.200000 
+
+1,1,0
+3 0,0 1,1 2,2 
+ 3.000000  1.000000 
+ 0.200000 
+
+1,2,0
+3 0,0 1,1 2,2 
+ 6.000000  0.333333 
+ 0.111111 
+
+1,3,0
+3 0,0 1,1 2,2 
+ 3.000000  1.000000 
+ 0.200000 
+
+2,0,1
+4 0,0 1,1 2,2 3,3 
+ 0.333333  0.111111  1.000000 
+ 0.200000  4.000000 
+ 7.000000 
+
+}
+set FORMAT 1
+recreateNetInsideFrameOnly $net
